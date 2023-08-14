@@ -1,0 +1,80 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300;400&family=Roboto+Mono&family=Tektur&display=swap');
+
+$operandsFont: 'Handjet', cursive;
+$resultFont: 'Tektur', cursive;
+$buttonsFont: 'Roboto Mono', monospace;
+
+$background: #FFFFFF;
+$calculatorBgColor: #dafffc;
+$displayBgColor: #C5D4D9;
+$keyBgColor: #F9DDA2;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: #FFFFFF;
+
+}
+
+.calculator{
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.493);
+    max-width: 500px;
+    background-color: $calculatorBgColor;
+    border-radius: 15px;
+    padding: 1px;
+    margin: auto;
+    margin-top: 4em;
+    .display{
+        border-radius: 2px;
+        padding: 1px;
+        background-color: $displayBgColor;
+        margin: 1em;
+        text-align: right;
+        &__operands{
+            margin: .2em;
+            font-family: $operandsFont;
+            font-size: 2.5em;
+        }
+        &__result{
+            font-family: $resultFont;
+            font-size: 3em;
+            margin: 0 .2em;
+        }
+    }
+    &__keyboard{
+        margin: 1em;
+        display: grid;
+        gap: 3px;
+        grid-template-columns: repeat(4,1fr);
+        .keyboard__key{
+            border-radius: 5px;
+            button{
+                box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.637);
+                background-color: $keyBgColor;
+
+                width: 100%;
+                height: 100%;
+
+                padding: .8em;
+
+                font-family: $buttonsFont;
+                font-size: 1.2em;
+                
+                border: none;
+                border-radius: 5px;
+                &:hover{
+                    background-color: color.scale($keyBgColor, $lightness: -60%);
+                }
+                &:active{
+                    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.637);
+                    background-color: color.scale($keyBgColor, $lightness: -75%)
+                }
+            }
+        }
+    }
+}
