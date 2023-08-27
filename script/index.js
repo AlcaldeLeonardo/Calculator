@@ -1,3 +1,5 @@
+import { captureKeys } from "./module/captureKeys.js";
+
 const keyNum = [];
 const keyOp = [];
 const $keyDel = document.getElementById("keyDEL")
@@ -14,9 +16,13 @@ let displayNum = "";
 
 
 //capturando los numeros
+captureKeys(keyNum, "keyNum", 11);
+
+//capturando a los operadores del DOM
+captureKeys(keyOp, "keyOp", 4);
+
+
 for (let index = 0; index < 11; index++) {
-    keyNum.push(document.getElementById(`keyNum${index}`))
-    
     //agregando eventos a los numeros
     keyNum[index].addEventListener("click", () =>{
         let num = keyNum[index].innerText;
@@ -28,9 +34,7 @@ for (let index = 0; index < 11; index++) {
     })
 }
 
-//capturando a los operadores del DOM
 for (let index = 0; index < 4; index++) {
-    keyOp.push(document.getElementById(`keyOp${index}`))
     
     //agregando eventos a los operadores
     keyOp[index].addEventListener("click", () =>{
