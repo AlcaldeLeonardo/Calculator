@@ -10,6 +10,15 @@ $calculatorBgColor: #dafffc;
 $displayBgColor: #C5D4D9;
 $keyBgColor: #F9DDA2;
 
+@keyframes blink {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -39,6 +48,13 @@ $keyBgColor: #F9DDA2;
             margin: .2em;
             font-family: $operandsFont;
             font-size: 2.5em;
+            &::after{
+                content: "|";
+                animation-duration: 500ms;
+                animation-iteration-count: infinite;
+                animation-name: blink;
+                animation-direction: alternate;
+            }
         }
         &__result{
             font-family: $resultFont;

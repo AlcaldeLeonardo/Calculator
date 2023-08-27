@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght@300;400&family=Roboto+Mono&family=Tektur&display=swap");
+@keyframes blink {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,6 +37,13 @@
   margin: 0.2em;
   font-family: "Handjet", cursive;
   font-size: 2.5em;
+}
+.calculator .display__operands::after {
+  content: "|";
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-name: blink;
+  animation-direction: alternate;
 }
 .calculator .display__result {
   font-family: "Tektur", cursive;
