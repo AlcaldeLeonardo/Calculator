@@ -7,7 +7,7 @@ const keyOp = [];
 
 
 //capturando los numeros
-captureKeys(keyNum, "keyNum", 11);
+captureKeys(keyNum, "keyNum", 12);
 
 //capturando a los operadores del DOM
 captureKeys(keyOp, "keyOp", 4);
