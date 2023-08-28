@@ -1,3 +1,5 @@
+import { limitDecimals } from "./limiter.js";
+
 export function setEvents(keyNum, keyOp) {
     const $keyDel = document.getElementById("keyDEL");
     const $keyClear = document.getElementById("keyClear");
@@ -6,6 +8,7 @@ export function setEvents(keyNum, keyOp) {
     const $displayResult = document.getElementById("displayResult");
     let result = 0;
     let displayNum = "";
+
 
     function updateDisplay() {
         $displayOperands.innerHTML = displayNum;
@@ -35,6 +38,7 @@ export function setEvents(keyNum, keyOp) {
 
     function handleEqualClick() {
         result = displayNum === "" ? 0 : eval(displayNum);
+        result = limitDecimals(result, 10, 10);
         $displayResult.innerHTML = result;
     }
 
@@ -50,7 +54,7 @@ export function setEvents(keyNum, keyOp) {
         $displayResult.innerHTML = result;
     }
 
-    for (let index = 0; index < 11; index++) {
+    for (let index = 0; index < 12; index++) {
         keyNum[index].addEventListener("click", () => {
             handleNumberClick(keyNum[index].innerText);
         });
