@@ -7,6 +7,7 @@ Simple calculator, nothing new around here. Just a little programming logic exer
 * BEM Methodology
 * Conversion from number to string and vice versa
 * Sass implementation
+* Use via mouse, keyboard input not yet developed
 
 ## Obstacles encountered and resolved
 
