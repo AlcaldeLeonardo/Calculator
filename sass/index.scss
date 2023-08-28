@@ -100,3 +100,20 @@ $keyBgColor: #f9dda2;
         }
     }
 }
+
+.footer{
+    color: #fff;
+    font-family: $buttonsFont;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    padding: .2em;
+    background-color: black;
+    width: 100%;
+    margin-top: 5em;
+    box-shadow: 0 0 40px 10px  rgba(0, 0, 0, 0.486);
+    .linkedInLogo{
+        width: 50px;
+    }
+}
